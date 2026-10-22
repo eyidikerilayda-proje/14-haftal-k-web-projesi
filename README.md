@@ -1,4 +1,5 @@
 # 14-haftal-k-web-projesi
+16 EKİM ÖDEVİ
 🎲 Ne Yapalım?
 
 Arkadaş ortamında "Ne yapalım, ne oynayalım?" sorusuna adil ve hızlı bir cevap bulan, tek telefondan çalışan oylama uygulaması.
