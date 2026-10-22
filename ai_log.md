@@ -1,4 +1,7 @@
 16 EKİM ÖDEVİ
+
+
+
 BEN: merhaba ben githuptan  bir uygulama geliştireceğim. Ön lisans öğrencisiyim ve temel html ve css dillerini biliyorum. Uygulamam; bir etkinlik oyun,  ve oylama sayfası olacak. problemim: Arkadaş ortamında,  ne yapalım, ne oynayalım kararı hiç verilemiyor. Çözümüm de ;seçenek ekleme, oyun önerileri ve , oylama ekranı ve sonuç ekranı . Benim fikrim bu ancak " Backend olmayacak sadece LocalStorage"  Ve bu oylama benim telefonumdan olucak sadece projemde bunu açıkca belirticem.  Sitenin içeriği ve tasarımı olucak ve yazdığımız kodun her daim çalışabilirliği çok önemli . eksikliklerim neler fikrim nasıl?.
 
 YAPAY ZEKA:Uygulamadaki olası sorunlar ve iyileştirmeler listeleniyor
