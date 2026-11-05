@@ -83,9 +83,82 @@ KULLANICI_ADIN ve Adın Soyadın kısımlarını kendi bilgilerinle doldurmalıs
 
 Sıradaki adım olarak dört ekranın HTML/CSS iskeletini yazmaya başlayalım mı?
 
-Readme
-Belge
-·MD
+
+6 kasım ödevi 
+BEN: bu tanıttığım projemin prototipini oluşturur musun
+
+YAPAY ZEKA: Ne Yapalım?
+Yapıt
+BEN: oyun önerileri ve etkinlik önerilerini aynı sayfada alt alta görmek istemiyorum kafa karıştırıcı ve etkinlik önerlerine gelene kadar bunu kimse bilmez görmez en üstte iki başlık ve altlarına o seçenekler olan bir bölüm istiyorum
+
+YAPAY ZEKA: Değişiklik aynı adreste güncellendi, v2 kartını yenilemen yeterli. Kodun söz dizimini otomatik kontrol ettim ve hata çıkmadı, ama tarayıcıda tıklayarak denemedim.
+
+Ne değişti
+Sayfanın en üstünde, başlığın hemen altında üç sekme var: Kurulum, Oyun önerileri ve Etkinlik önerileri. Her sekmeye basınca sadece kendi içeriği açılıyor, alt alta uzun bir liste yok.
+
+Kurulum: Katılımcı ve seçenek ekleme, “Oylamayı başlat” butonu.
+Oyun önerileri: Sadece oyunlar.
+Etkinlik önerileri: Sadece etkinlikler.
+Öneri sekmelerinin üstünde şu an seçeneklerinde neler olduğunu gösteren bir kutu ve “Kuruluma dön” butonu var. Böylece sekme değiştirirken listeni kaybetmiyorsun. “Seçeneklere ekle” butonu da aynen çalışıyor, kişi sayısı filtresi de.
+
+Önerileri ayrı sekmeye almak yerine Kurulum sekmesini de yok edip sadece “Oyun önerileri” ve “Etkinlik önerileri” olmasını istersen, katılımcı ve seçenek ekleme alanını bu iki sekmenin üstüne ortak olarak koyabilirim. Şimdiki düzen sade ama bu alternatif de mümkün.
+
+BEN: bu prototipin css html jaavascript kodlarını verebilir misin
+
+YAPAY ZEKA: Bir komut çalıştırdı, paylaşılan dosyalar
+Kodu README’de yazdığımız proje yapısına uygun şekilde dört dosyaya böldüm:
+
+index.html: Sayfanın iskeleti. CSS ve JS dosyalarını buradan bağlıyor.
+style.css: Tüm görünüm ve renkler. Koyu mod da burada.
+games.js: 33 oyun ve 15 etkinlik listesi. Yeni öneri eklemek için bir satırı kopyalayıp değiştirmen yeterli.
+script.js: Uygulamanın mantığı: ekleme/silme, oylama, kura, sekmeler ve localStorage.
+Kullanım: Dört dosyayı aynı klasöre koy ve index.html’i tarayıcıda aç. Dosya isimlerini değiştirme, çünkü index.html bu isimlere göre bağlanıyor. GitHub’a yüklerken de dört dosyayı depoda aynı seviyede tut.
+
+Dikkat edeceğin iki nokta
+
+index.html içinde games.js, script.js’ten önce yükleniyor. Sırayı değiştirirsen liste bulunamaz ve uygulama çalışmaz.
+Yazı tipi internetten geliyor. İnternet yoksa telefonun kendi yazı tipi kullanılır ve uygulama yine çalışır.
+Kodu birleştirdikten sonra söz dizimi hatası olmadığını otomatik kontrol ettim, ama dosyaları tarayıcıda açıp denemedim. Kendi bilgisayarında açınca bir etkinlik ekleyip oylamayı sonuna kadar dene.
+
+Projeni sunarken ya da kendin geliştirirken kodu anlamak için script.js’i bölüm bölüm, satır satır anlatabilirim. İstersen oradan başlayalım.
+
+Index
+Kod
+·HTML
+Style
+Kod
+·CSS
+Script
+JS
+Games
+JS
+BEN: ben bunları githuba yükledim aşşağı açıklamaya ne yazmalıyım
+
+Repo description ve commit mesajı seçeneklerini ayırt etmeye çalışılıyor.
+Repo description ve commit mesajı seçeneklerini ayırt etmeye çalışılıyor.
+Muhtemelen GitHub’da dosya yüklerken çıkan “Commit changes” kutusunu kastediyorsun. Aşağıdaki ikisi için de hazır metinler var.
+
+1. Commit mesajı (dosya yüklerken)
+Başlık (üstteki kutu):
+
+Ne Yapalım? oylama uygulamasının ilk sürümü
+Açıklama (alttaki “Add an optional extended description” kutusu):
+
+HTML, CSS ve JavaScript ile yapılmış, tek telefondan çalışan oylama uygulaması.
+Katılımcı ve seçenek ekleme, gizli sıralı oylama, beraberlikte tek seferlik kura,
+oyun ve etkinlik önerileri eklendi. Veriler localStorage ile saklanır.
+2. Depo açıklaması (reponun ana sayfasındaki “About” bölümü)
+Sağ üstteki ⚙️ simgesine tıklayıp şunu yazabilirsin:
+
+Arkadaş ortamında "ne yapalım?" kararını veren, tek telefondan çalışan oylama uygulaması. Sunucusuz, localStorage ile.
+Aynı pencerede Topics kısmına şunları ekleyebilirsin: html, css, javascript, localstorage, voting-app.
+
+Kontrol et
+README.md dosyasını da yüklediysen ve depo ana klasöründe duruyorsa GitHub onu otomatik olarak ana sayfada gösterir.
+index.html, style.css, script.js ve games.js de ana klasörde, aynı seviyede olmalı. Bir klasörün içine koyduysan siteyi yayınlarken sorun çıkar.
+README’deki KULLANICI_ADIN ve Adın Soyadın kısımlarını kendi bilgilerinle değiştirmeyi unutma.
+Siteyi telefonda kullanmak için Settings → Pages bölümünden yayına alman gerekecek. İstersen bunun adımlarını da yazayım.
+
 
 
 
