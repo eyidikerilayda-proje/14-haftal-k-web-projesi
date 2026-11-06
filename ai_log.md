@@ -104,6 +104,72 @@ Etkinlik önerileri: Sadece etkinlikler.
 Önerileri ayrı sekmeye almak yerine Kurulum sekmesini de yok edip sadece “Oyun önerileri” ve “Etkinlik önerileri” olmasını istersen, katılımcı ve seçenek ekleme alanını bu iki sekmenin üstüne ortak olarak koyabilirim. Şimdiki düzen sade ama bu alternatif de mümkün.
 
 
+BEN: şimdi bu yaptığımız prototipin yani sitemin kodlarını bana verirmisin
+
+YAPAY ZEKA: Dosya ve fonksiyon açıklamaları, sık sorular hazırlanıyor
+Pages’i yayınlama adımını atla (zaten yaptıysan sorun değil, zarar vermez). Ödev için asıl iş kodu anlamak ve anlatabilmek. Dosyalar deponda doğru yerde, o kısım tamam.
+
+Yapman gerekenler
+README.md: Hocanın istediği başlıkları bozmadan, benim yazdığım README’den özellikleri, kısıtları ve proje yapısını ekle. “Sunucu yok, localStorage kullanıldı, oylama tek telefondan yapılıyor” cümlesi mutlaka olsun.
+ai_log.md: Bu projede benimle neler yaptığını (fikir geliştirme, kapsam kararları, kod, test) yaz. Hangi kararları kendin verdiğini de yaz, örneğin isim tekrarı, kategori ve geçmiş özelliklerini çıkarman.
+Kodu çalıştır ve oku: index.html’i bilgisayarında aç, bir oylamayı bitir, sayfayı ortada yenile. Her dosyada ne olduğunu aşağıdaki özetle karşılaştır.
+Hocana anlatacağın özet
+Dosya	Ne işe yarar
+index.html	Sayfanın iskeleti. İçinde boş bir <div id="app"> var, ekranları JavaScript buraya çizer.
+style.css	Görünüm. Renkler en üstteki :root bölümünde, mobilde rahat kullanım için büyük butonlar ve koyu mod var.
+games.js	Oyun ve etkinlik listesi. Her satırda tür, ad, en az ve en çok kişi, açıklama bulunur.
+script.js	Uygulamanın tüm mantığı.
+script.js içindeki önemli parçalar
+
+S (durum): Uygulamanın o anki hâlini tutan nesne. İçinde hangi ekranda olduğu (stage), katılımcılar, seçenekler, oy sayaçları (counts), sıra kimde (current) ve kura sonucu (tie) var.
+save() ve load(): Durumu localStoragea yazar ve okur. JSON.stringify nesneyi metne, JSON.parse metni nesneye çevirir. Sayfa yenilense de kaldığı yerden devam etmesinin sebebi bu.
+try/catch: localStorage hata verirse veya kayıt bozuksa uygulama çökmesin, temiz başlangıca dönsün diye.
+h(): HTML elemanı oluşturan yardımcı fonksiyon. Metinleri textContent ile yazar, böylece kullanıcı sayfaya kod sokamaz.
+addItem(): Katılımcı veya seçenek ekler. Boşlukları trim() ile temizler, boş girişi ve 30 karakterden uzun metni engeller.
+vote(): Sıradaki kişiye seçenekleri gösterir. “Oyumu ver” deyince sadece o seçeneğin sayacı bir artar, kimin neye oy verdiği hiçbir yere yazılmaz. Sonra “Oy kullanıldı” ekranı gelir.
+result(): En yüksek oyu bulur. Eşit olanlar varsa “Kura çek” butonu çıkar. Kura Math.random() ile bir kez çekilir ve S.tie içine kaydedilir, yani sayfa yenilense de değişmez.
+render(): stage değerine bakıp doğru ekranı çizer. Her değişiklikten sonra çağrılır.
+filter(): Öneri listesinde kişi sayısına uygun oyunları ayıklar.
+Hocanın sorabileceği sorular
+Veri nerede saklanıyor? Telefonun tarayıcısındaki localStorage içinde, sunucu yok.
+Neden backend yok? Basit ve ücretsiz kalsın, internetsiz çalışsın diye. Kısıt olarak README’de yazılı.
+Oyların gizliliği nasıl sağlanıyor? Kimin neye oy verdiği saklanmıyor, sadece toplam sayaçlar var.
+Sayfa yenilenince ne oluyor? load() kayıtlı durumu okuyup aynı ekranı çiziyor.
+Aynı kişi iki kez oy verebilir mi? Hayır, current sırayla ilerliyor ve herkes bir kez oy kullanıyor.
+Beraberlik nasıl çözülüyor? Eşit seçenekler arasından rastgele biri seçiliyor ve sonuç kaydediliyor.
+script.js neden (function(){ ... })(); içinde? Değişkenlerin başka dosyalarla karışmaması için.
+Kodun büyük kısmını benimle birlikte yazdın, bu yüzden hocaya sorulursa dürüstçe “yapay zekâ ile geliştirdim, kararları ben verdim” demek en doğrusu. Kodu anlamadan teslim etmek ise riskli.
+
+İstersen şimdi sana bu konulardan kısa bir test hazırlayayım. Hocanın sorabileceği tarzda sorular olur, hazır mısın diye kendini ölçersin.
+
+BEN: adım adım anlat şuan ne yapacam
+
+YAPAY ZEKA: README dosyasını düzenleme adımları ekleniyor
+1
+README.md dosyasını düzenle
+Deponun ana sayfasında README.md dosyasına tıkla, sağ üstteki kalem simgesine bas. İçeriğin en altına geçip projenin kısa tanıtımını ekle: problem, çözüm, özellikler ve kısıtlar. Kısıtlar bölümüne mutlaka 'Sunucu yok, veriler localStorage ile saklanır, oylama tek telefondan yapılır' cümlesini yaz. Mevcut başlıkları silme. Sonra sağ üstteki yeşil Commit changes butonuna bas ve tekrar onayla.
+2
+ai_log.md dosyasını güncelle
+Ana sayfada ai_log.md dosyasını açıp yine kalem simgesine bas. Bu proje için yapay zekâ ile neler yaptığını kısa maddelerle yaz: fikir ve kapsam konuşma, prototip oluşturma, kodu dosyalara bölme. Kendi verdiğin kararları da yaz, örneğin isim tekrarı kontrolünü, kategori filtresini, geçmişi ve PWA'yı çıkarmak. Commit changes ile kaydet.
+3
+Projeyi kendi bilgisayarında dene
+Bilgisayarında dosyaların olduğu klasöre git ve index.html'e çift tıkla. İki katılımcı ve iki seçenek ekle, Oylamayı başlat'a bas, Başlat ile onayla. Her iki kişi de oy versin. Sonucu gör. Sonra tekrar dene ve bu kez eşit oy ver, Kura çek butonunu gör. Oylamanın ortasında F5 ile sayfayı yenile ve aynı ekranda kaldığını kontrol et. Hocanın 'bunu göster' demesi ihtimaline karşı bunu kendin yapabilmelisin.
+4
+Kodları sırayla oku
+GitHub'da index.html'i açıp oku. Çok kısa, önce bunu oku. Sonra style.css'e bak, baştaki renk ayarlarını gör. Sonra games.js'e bak, bir satırın ne anlama geldiğini söyle. En son script.js'e geç. Her fonksiyonun yanındaki ismine bak: save, load, addItem, vote, result, render. Hepsini anlamak zorunda değilsin, ama ne işe yaradıklarını söyleyebilmelisin.
+5
+Kendi cümlelerinle özetini yaz
+Bir önceki mesajdaki dosya ve fonksiyon özetini kendi cümlelerinle bir kâğıda yaz. Ezberlemek yerine 'bu dosya şunu yapıyor' diye söylemeye alış. Özellikle şunları anlatabil: veri nerede saklanıyor, sayfa yenilenince ne oluyor, oyların gizliliği nasıl sağlanıyor, beraberlik nasıl çözülüyor.
+6
+Soru çalış
+Bana 'beni test et' yaz, sana hocanın sorabileceği tarzda sorular sorayım. Yanlış cevapladığın yerleri birlikte çalışacağız. Ya da koddaki anlamadığın bir satırı buraya yapıştır, sana sade bir dille açıklayayım.
+Şu an yapman gereken altı adım yukarıda. Önce 1 ve 2'yi yap, çünkü teslim için gerekenler onlar. Gerisi hocanın soracağı sorulara hazırlık.
+
+
+
+
+
+
 
 
 
