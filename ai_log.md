@@ -165,6 +165,64 @@ Soru çalış
 Bana 'beni test et' yaz, sana hocanın sorabileceği tarzda sorular sorayım. Yanlış cevapladığın yerleri birlikte çalışacağız. Ya da koddaki anlamadığın bir satırı buraya yapıştır, sana sade bir dille açıklayayım.
 Şu an yapman gereken altı adım yukarıda. Önce 1 ve 2'yi yap, çünkü teslim için gerekenler onlar. Gerisi hocanın soracağı sorulara hazırlık.
 
+BEN: index.html kodlarım neden az
+
+YAPAY ZEKA: Şimdi sırayla şunları yap.
+
+1. Bilgisayarında dene
+index.html’e çift tıkla. Tarayıcıda açılınca şu sırayla test et:
+
+Katılımcı kutusuna iki isim ekle (örneğin Ali, Ayşe).
+Seçenek kutusuna iki seçenek ekle (örneğin Bowling, Sinema).
+Oyun önerileri ve Etkinlik önerileri sekmelerine bas, bir öneriyi “Seçeneklere ekle” ile ekle. Sonra Kuruluma dön de.
+Oylamayı başlat’a bas, sonra Başlat ile onayla.
+İlk kişi bir seçeneği seçip Oyumu ver’e bassın. “Oy kullanıldı” ekranı gelmeli.
+Sıradaki oy verecek’e bas, ikinci kişi de oy versin.
+Sonuç ekranını gör.
+Sonra bir de beraberlik testi yap: Yeni oylama de, iki kişi farklı seçeneklere oy versin. “Beraberlik!” ve Kura çek butonu çıkmalı. Kura çektikten sonra sayfayı yenile, sonuç aynı kalmalı.
+
+2. Sonucu bana yaz
+Her şey çalıştıysa “çalıştı” yaz, GitHub’a yüklemeye geçeriz.
+Bir yerde takıldıysa hangi adımda ne olduğunu yaz. Sayfa boş açılıyorsa ya da bir buton çalışmıyorsa, onu da söyle.
+İpucu: Sayfa boş görünüyorsa klavyeden F12'ye bas, Console sekmesine bak ve kırmızı yazıyı bana gönder. Hatayı oradan bulabiliriz.
+
+BEN: çalıştı
+
+Planning the GitHub upload steps.
+YAPAY ZEKA: Süper. Şimdi GitHub’a yükleyelim.
+
+Tarayıcıda GitHub’da deponu aç (14-haftal-k-web-projesi).
+Dosya listesinin üstündeki Add file butonuna bas, sonra Upload files seç.
+Bilgisayarındaki proje klasörünü aç ve içindeki sadece index.html ile script.js dosyalarını sürükleyip sayfaya bırak. Klasörün kendisini sürükleme.
+Dosyalar listelenince sayfanın altına in, yeşil Commit changes butonuna bas.
+Depo ana sayfasına dönünce index.html ve script.js satırlarında “Add files via upload” ve “now” ya da “1 minute ago” yazdığını kontrol et.
+index.html’e tıkla. Dosya artık uzun olmalı ve içinde screen-setup, screen-vote gibi ifadeler görünmeli. Görünüyorsa yükleme tamam.
+style.css ve games.js dosyalarını tekrar yüklemene gerek yok, onlar değişmedi.
+
+Bittikten sonra ödev için kalanlar:
+
+README.md: Kendi bilgilerini ve projenin açıklamasını ekle. Hazır metin istersen söyle, yapıştırmaya hazır şekilde yazayım.
+ai_log.md: Bu projede benimle neler yaptığını yaz. Bunun için de istersen taslak hazırlarım.
+Yüklemede takılırsan ekran görüntüsünü gönder.
+
+BEN:önceki index ve script silimmi
+
+YAPAY ZEKA: Hayır, silme. Aynı adlı dosyaları yüklediğinde GitHub eskilerini otomatik olarak yenileriyle değiştirir.
+
+Silersen de bir şey bozulmaz, ama gereksiz iş olur. Sadece yeni index.html ve script.js dosyalarını yükle ve Commit changes’e bas.
+
+Bir şeye dikkat et: dosyaları deponun ana dizinine yüklüyor olmalısın. Yüklerken bir klasör içinde değil, deponun en üst sayfasında olduğundan emin ol (adres çubuğunda .../14-haftal-k-web-projesi ile bitiyorsa doğru yerdesin). Böylece eski dosyaların üzerine yazılır, ayrı kopya oluşmaz.
+
+Yükledikten sonra dosya listesinde her dosyadan sadece bir tane görmelisin. İki tane index.html görürsen bana yaz.
+
+BEN: oldu
+
+YAPAY ZEKA: Harika, kod artık GitHub’da. Ödevin ana kısmı tamam.
+
+
+
+
+
 
 
 
