@@ -8,7 +8,122 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap" id="app"></div>
+<div class="wrap">
+
+  <!-- 1) KURULUM EKRANI: sekmeler + katılımcı/seçenek ekleme + öneriler -->
+  <div id="screen-setup">
+    <h1>Ne <span>yapalım</span>?</h1>
+    <p class="sub">Katılımcıları ve seçenekleri ekle, telefonu elden ele verip oyla.</p>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tabbtn-setup" aria-selected="true">Kurulum</button>
+      <button role="tab" id="tabbtn-games" aria-selected="false">Oyun önerileri</button>
+      <button role="tab" id="tabbtn-acts" aria-selected="false">Etkinlik önerileri</button>
+    </div>
+
+    <!-- Sekme 1: Kurulum -->
+    <div id="tab-setup">
+      <section>
+        <h2>Katılımcılar</h2>
+        <div class="row">
+          <input type="text" id="player-input" placeholder="İsim yaz" maxlength="40" aria-label="Katılımcı adı">
+          <button class="pri" id="player-add">Ekle</button>
+        </div>
+        <p class="err" id="player-err"></p>
+        <ul class="chips" id="player-list"></ul>
+      </section>
+
+      <section>
+        <h2>Seçenekler</h2>
+        <div class="row">
+          <input type="text" id="option-input" placeholder="Örn. Bowling" maxlength="40" aria-label="Seçenek">
+          <button class="pri" id="option-add">Ekle</button>
+        </div>
+        <p class="err" id="option-err"></p>
+        <ul class="chips" id="option-list"></ul>
+      </section>
+
+      <button class="pri big" id="start-btn" disabled>Oylamayı başlat</button>
+      <p class="hint" id="start-hint"></p>
+
+      <footer>Veriler sadece bu telefonun tarayıcısında saklanır. Oylama tek cihazdan yapılır.</footer>
+    </div>
+
+    <!-- Sekme 2: Oyun önerileri -->
+    <div id="tab-games" hidden>
+      <div class="info">
+        <p id="games-info"></p>
+        <button class="goto-setup">Kuruluma dön</button>
+      </div>
+      <p class="sub" id="games-sub"></p>
+      <button id="games-filter"></button>
+      <div id="games-list"></div>
+    </div>
+
+    <!-- Sekme 3: Etkinlik önerileri -->
+    <div id="tab-acts" hidden>
+      <div class="info">
+        <p id="acts-info"></p>
+        <button class="goto-setup">Kuruluma dön</button>
+      </div>
+      <p class="sub" id="acts-sub"></p>
+      <button id="acts-filter"></button>
+      <div id="acts-list"></div>
+    </div>
+  </div>
+
+  <!-- 2) ONAY EKRANI: oylama başlamadan son kontrol -->
+  <div id="screen-confirm" class="center" hidden>
+    <h1>Hazır mısınız?</h1>
+    <p class="sub" id="confirm-count"></p>
+    <p id="confirm-players"></p>
+    <p id="confirm-options"></p>
+    <p class="hint">Başlayınca liste kilitlenir. Değiştirmek için şimdi geri dön.</p>
+    <button class="pri big" id="confirm-start">Başlat</button>
+    <button class="big" id="confirm-back">Listeyi düzenle</button>
+  </div>
+
+  <!-- 3) OYLAMA EKRANI -->
+  <div id="screen-vote" hidden>
+    <div class="top">
+      <span class="hint" id="vote-progress"></span>
+      <button class="link" id="reset-btn">Sıfırla</button>
+    </div>
+
+    <!-- Oy verme aşaması -->
+    <div id="vote-pick">
+      <h2 id="vote-title"></h2>
+      <p class="sub">Seçimini yap, sonra oyunu ver.</p>
+      <div id="vote-options"></div>
+      <button class="pri big" id="vote-submit" disabled>Oyumu ver</button>
+    </div>
+
+    <!-- "Oy kullanıldı" aşaması: telefon sıradakine verilir -->
+    <div id="vote-done" class="center" hidden>
+      <div class="tick">✓</div>
+      <h1>Oy kullanıldı</h1>
+      <p class="sub" id="done-text"></p>
+      <button class="pri big" id="done-next"></button>
+    </div>
+  </div>
+
+  <!-- 4) SONUÇ EKRANI -->
+  <div id="screen-result" hidden>
+    <div id="result-tie" class="center" hidden>
+      <h1>Beraberlik!</h1>
+      <p class="sub" id="tie-text"></p>
+      <button class="pri big" id="draw-btn">Kura çek</button>
+    </div>
+    <div id="result-winner" class="winner" hidden>
+      <span id="winner-label"></span>
+      <b id="winner-name"></b>
+    </div>
+    <div id="result-bars"></div>
+    <button class="big" id="new-vote">Yeni oylama</button>
+  </div>
+
+</div>
+
 <script src="games.js"></script>
 <script src="script.js"></script>
 </body>
